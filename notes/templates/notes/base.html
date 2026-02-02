@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sticky Notes</title>
+</head>
+<body>
+    <nav><a href="{% url 'note_list' %}">Home</a> | <a href="{% url 'note_create' %}">Add Note</a></nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <h1>Sticky Notes</h1>
+    {% for note in notes %}
+        <div style="border: 1px solid black; padding: 10px; margin: 10px;">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+            <a href="{% url 'note_update' note.pk %}">Edit</a> | 
+            <a href="{% url 'note_delete' note.pk %}">Delete</a>
+        </div>
+    {% endfor %}
+{% endblock %}
